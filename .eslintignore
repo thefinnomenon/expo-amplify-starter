@@ -1,0 +1,5 @@
+# don't ignore config files
+!.babelrc.js
+!.commitlintrc.js
+!.eslintrc.js
+!.lintstagedrc.js
