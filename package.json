@@ -1,5 +1,5 @@
 {
-  "main": "./index.tsx",
+  "main": "./AppEntry.js",
   "private": true,
   "scripts": {
     "start": "expo start",

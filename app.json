@@ -1,6 +1,6 @@
 {
   "expo": {
-    "entryPoint": "./index.tsx",
+    "entryPoint": "./AppEntry.js",
     "name": "expo-amplify-starter",
     "slug": "expo-amplify-starter",
     "version": "1.0.0",
