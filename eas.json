@@ -1,9 +1,13 @@
 {
   "build": {
     "release": {},
-    "development": {
-      "developmentClient": false,
-      "distribution": "internal"
+    "dev": {
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": true
+      }
     }
   }
 }

@@ -8,13 +8,21 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "prepare": "husky install",
+    "build": "eas build -p all",
+    "build:ios": "eas build -p ios",
+    "build:android": "eas build -p android",
+    "build:dev": "eas build -p all --profile dev",
+    "build:dev:ios": "eas build -p ios --profile dev",
+    "build:dev:android": "eas build -p android --profile dev",
     "test": "jest",
     "test:dev": "jest --watch --changedSince=origin/master",
     "test:debug": "jest -o --watch",
     "test:updateSnapshots": "jest -u",
     "test:ci": "jest --coverage",
     "test:badges": "npm run test:ci  && jest-coverage-badges --input coverage/coverage-summary.json --output __badges__",
-    "test:e2e": "detox test"
+    "test:e2e": "detox test",
+    "test:e2e:ios": "detox test --configuration ios",
+    "test:e2e:android": "detox test --configuration android"
   },
   "dependencies": {
     "expo": "~42.0.1",
