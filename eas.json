@@ -1,12 +1,22 @@
 {
   "build": {
     "release": {},
-    "dev": {
+    "dev-simulator": {
       "android": {
         "buildType": "apk"
       },
       "ios": {
         "simulator": true
+      }
+    },
+    "debug": {
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": "assembleDebug assembleAndroidTest -DtestBuildType=debug"
+      },
+      "ios": {
+        "simulator": true,
+        "buildConfiguration": "Debug"
       }
     }
   }
