@@ -1,5 +1,5 @@
 {
-  "main": "./AppEntry.js",
+  "main": "./index.js",
   "private": true,
   "scripts": {
     "start": "expo start",

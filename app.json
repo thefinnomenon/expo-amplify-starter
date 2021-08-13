@@ -1,6 +1,6 @@
 {
   "expo": {
-    "entryPoint": "./AppEntry.js",
+    "entryPoint": "./index.js",
     "name": "expo-amplify-starter",
     "slug": "expo-amplify-starter",
     "version": "1.0.0",
