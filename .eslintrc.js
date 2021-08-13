@@ -20,8 +20,17 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    'jest/globals': true,
   },
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'import', 'prettier'],
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'react-hooks',
+    'import',
+    'prettier',
+    'jest',
+    'detox',
+  ],
   extends: [
     'airbnb',
     'airbnb/hooks',
@@ -33,6 +42,8 @@ module.exports = {
     'plugin:json/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:jest/recommended',
+    'plugin:jest/style',
     'plugin:prettier/recommended',
   ],
   rules: {
@@ -64,5 +75,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 0,
     'no-console': 0,
     '@typescript-eslint/ban-ts-comment': 0,
+    'import/no-extraneous-dependencies': 0,
+    'import/extensions': 0,
   },
 };

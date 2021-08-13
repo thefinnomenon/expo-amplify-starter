@@ -3,3 +3,7 @@
 !.commitlintrc.js
 !.eslintrc.js
 !.lintstagedrc.js
+!.detoxrc.json
+
+# ignore coverage dir
+coverage/
