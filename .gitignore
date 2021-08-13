@@ -13,4 +13,5 @@ web-build/
 .DS_Store
 
 # testing
-coverage/\*\*/*
+coverage/
+bin/
