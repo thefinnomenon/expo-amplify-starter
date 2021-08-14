@@ -7,7 +7,7 @@ describe('<App />', () => {
   it('has 1 child', () => {
     const tree = renderer.create(<App />).toJSON();
     // @ts-ignore
-    expect(tree?.children?.length).toBe(1);
+    expect(tree?.children?.length).toBe(2);
   });
 
   it('renders correctly', () => {
