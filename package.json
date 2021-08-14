@@ -6,6 +6,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "web:mobile": "expo start:web --https --ios --android",
+    "web:ios": "expo start:web --https --ios",
+    "web:android": "expo start:web --https --android",
     "eject": "expo eject",
     "prepare": "husky install",
     "build": "eas build -p all",
@@ -14,6 +17,7 @@
     "build:dev": "eas build -p all --profile dev",
     "build:dev:ios": "eas build -p ios --profile dev",
     "build:dev:android": "eas build -p android --profile dev",
+    "build:web": "expo build:web && npx serve web-build",
     "test": "jest",
     "test:dev": "jest --watch --changedSince=origin/master",
     "test:debug": "jest -o --watch",
@@ -67,6 +71,19 @@
     "prettier": "^2.3.2",
     "react-test-renderer": "^17.0.2",
     "ts-jest": "^26",
-    "typescript": "~4.0.0"
+    "typescript": "~4.0.0",
+    "workbox-background-sync": "^6.2.4",
+    "workbox-broadcast-update": "^6.2.4",
+    "workbox-cacheable-response": "^6.2.4",
+    "workbox-core": "^6.2.4",
+    "workbox-expiration": "^6.2.4",
+    "workbox-google-analytics": "^6.2.4",
+    "workbox-navigation-preload": "^6.2.4",
+    "workbox-precaching": "^6.2.4",
+    "workbox-range-requests": "^6.2.4",
+    "workbox-routing": "^6.2.4",
+    "workbox-strategies": "^6.2.4",
+    "workbox-streams": "^6.2.4",
+    "workbox-webpack-plugin": "^6.2.4"
   }
 }

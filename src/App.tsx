@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 export default function App(): JSX.Element {
   return (
@@ -21,3 +22,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://cra.link/PWA
+// serviceWorkerRegistration.register();
