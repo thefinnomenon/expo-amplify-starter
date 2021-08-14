@@ -11,8 +11,7 @@
     },
     "debug": {
       "android": {
-        "buildType": "apk",
-        "gradleCommand": ":app:assembleDebug :app:assembleAndroidTest -DtestBuildType=debug"
+        "buildType": "apk"
       },
       "ios": {
         "simulator": true,
