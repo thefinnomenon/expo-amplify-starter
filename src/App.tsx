@@ -1,27 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 // import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import { NavigationContainer } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import TabScreen from './screens/TabScreen';
+
+const Drawer = createDrawerNavigator();
 
 export default function App(): JSX.Element {
   return (
-    <View style={styles.container}>
-      <Text accessibilityLabel="Text">Text 1</Text>
-      <Text accessibilityLabel="Text">Text 2</Text>
-      {/* eslint-disable-next-line react/style-prop-object */}
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="TabScreen">
+        <Drawer.Screen
+          name="TabScreen"
+          component={TabScreen}
+          options={{ headerShown: false }}
+        />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

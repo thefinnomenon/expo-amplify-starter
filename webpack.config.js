@@ -39,15 +39,13 @@ module.exports = async (env, argv) => {
   config.resolve.alias = {
     ...config.resolve.alias,
 
-    '@api': path.resolve(__dirname, 'src/api/'),
-    '@assets': path.resolve(__dirname, 'src/assets/'),
-    '@components': path.resolve(__dirname, 'src/components/'),
-    '@i18n': path.resolve(__dirname, 'src/i18n/'),
-    '@navigation': path.resolve(__dirname, 'src/navigation/'),
-    '@screens': path.resolve(__dirname, 'src/screens/'),
-    '@services': path.resolve(__dirname, 'src/services/'),
-    '@styles': path.resolve(__dirname, 'src/styles/'),
-    '@utilities': path.resolve(__dirname, 'src/utilities/'),
+    '@/api': path.resolve(__dirname, 'src/api/'),
+    '@/assets': path.resolve(__dirname, 'src/assets/'),
+    '@/components': path.resolve(__dirname, 'src/components/'),
+    '@/locales': path.resolve(__dirname, 'locales/'),
+    '@/screens': path.resolve(__dirname, 'src/screens/'),
+    '@/styles': path.resolve(__dirname, 'src/styles/'),
+    '@/utilities': path.resolve(__dirname, 'src/utilities/'),
   };
 
   return config;

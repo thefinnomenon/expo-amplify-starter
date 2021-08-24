@@ -73,6 +73,8 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': 0,
+    '@typescript-eslint/ban-types': 0,
+    '@typescript-eslint/no-unused-vars': 0,
     'no-console': 0,
     '@typescript-eslint/ban-ts-comment': 0,
     'import/no-extraneous-dependencies': 0,
