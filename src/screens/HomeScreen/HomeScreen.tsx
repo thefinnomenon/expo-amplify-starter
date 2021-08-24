@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import styled from 'styled-components/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Home, RootStackParamList } from '@/screens/routes';
 
@@ -8,8 +8,22 @@ type Props = NativeStackScreenProps<RootStackParamList, Home>;
 
 export default function HomeScreen(props: Props): JSX.Element {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home screen</Text>
-    </View>
+    <Container
+      style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
+    >
+      <Title>Home screen</Title>
+    </Container>
   );
 }
+
+const Container = styled.View`
+  flex: 1;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+`;
+const Title = styled.Text`
+  color: #000;
+  text-align: center;
+  font-size: 28px;
+`;
