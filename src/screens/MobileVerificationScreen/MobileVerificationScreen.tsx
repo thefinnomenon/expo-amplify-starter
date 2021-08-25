@@ -11,7 +11,7 @@ type Props = {} & typeof defaultProps;
 
 const defaultProps = Object.freeze({});
 const initialState = Object.freeze({
-  resendTimeout: 5,
+  resendTimeout: 60,
   isVerifying: false,
   error: '',
   code: '',
@@ -36,7 +36,6 @@ export default function MobileVerificationScreen({
 
     try {
       await resendConfirmationCode(mobile);
-      Alert('Resend Success', 'Resent verification code.');
     } catch (e) {
       showErrorAlert(e.message);
     }
