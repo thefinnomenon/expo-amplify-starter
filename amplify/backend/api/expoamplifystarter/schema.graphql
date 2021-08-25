@@ -1,0 +1,13 @@
+type User @model  {
+  id: ID!
+  name: String!
+  username: String!
+  pushTokens: [PushToken] @connection(keyName: "byUser", fields: ["id"])
+}
+
+type PushToken @model @key(name: "byUser", fields: ["userID"])  {
+  id: ID!
+  userID: ID!
+  type: String!
+  token: String!
+}

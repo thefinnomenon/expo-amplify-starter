@@ -10,7 +10,7 @@
       "@/locales/*": ["../locales/*"],
       "@/screens/*": ["screens/*"],
       "@/styles/*": ["styles/*"],
-      "@/utilities/*": ["utiltiies/*"]
+      "@/utilities/*": ["utilities/*"]
     }
   }
 }

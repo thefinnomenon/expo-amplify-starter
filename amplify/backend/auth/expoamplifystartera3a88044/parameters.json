@@ -1,0 +1,65 @@
+{
+    "resourceNameTruncated": "expoama3a88044",
+    "userPoolName": "expoamplifystartera3a88044_userpool_a3a88044",
+    "autoVerifiedAttributes": [
+        "phone_number"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": "365",
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "userpoolClientLambdaRole": "expoama3a88044_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "a3a88044",
+    "resourceName": "expoamplifystartera3a88044",
+    "authSelections": "userPoolOnly",
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    },
+    "useDefault": "manual",
+    "usernameAttributes": [
+        "phone_number"
+    ],
+    "triggers": "{}",
+    "userPoolGroupList": [
+        "Admins",
+        "Users"
+    ],
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "breakCircularDependency": true,
+    "permissions": [],
+    "dependsOn": [],
+    "userPoolGroups": true,
+    "adminQueries": false,
+    "hostedUI": false,
+    "authProviders": []
+}
