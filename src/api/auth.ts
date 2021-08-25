@@ -12,7 +12,7 @@ async function isLoggedIn() {
   }
 }
 
-export async function logout() {
+export async function logout(): Promise<void> {
   try {
     await Auth.signOut();
   } catch (error) {
