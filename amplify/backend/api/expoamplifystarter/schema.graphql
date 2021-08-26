@@ -1,13 +1,5 @@
-type User @model  {
+type PushToken @model @auth(rules: [{ allow: owner }]) {
   id: ID!
-  name: String!
-  username: String!
-  pushTokens: [PushToken] @connection(keyName: "byUser", fields: ["id"])
-}
-
-type PushToken @model @key(name: "byUser", fields: ["userID"])  {
-  id: ID!
-  userID: ID!
   type: String!
   token: String!
 }

@@ -2,18 +2,18 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateUserInput = {
+export type CreatePushTokenInput = {
   id?: string | null,
-  name: string,
-  username: string,
+  type: string,
+  token: string,
 };
 
-export type ModelUserConditionInput = {
-  name?: ModelStringInput | null,
-  username?: ModelStringInput | null,
-  and?: Array< ModelUserConditionInput | null > | null,
-  or?: Array< ModelUserConditionInput | null > | null,
-  not?: ModelUserConditionInput | null,
+export type ModelPushTokenConditionInput = {
+  type?: ModelStringInput | null,
+  token?: ModelStringInput | null,
+  and?: Array< ModelPushTokenConditionInput | null > | null,
+  or?: Array< ModelPushTokenConditionInput | null > | null,
+  not?: ModelPushTokenConditionInput | null,
 };
 
 export type ModelStringInput = {
@@ -56,56 +56,33 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type User = {
-  __typename: "User",
-  id: string,
-  name: string,
-  username: string,
-  pushTokens?: ModelPushTokenConnection | null,
-  createdAt: string,
-  updatedAt: string,
-};
-
-export type ModelPushTokenConnection = {
-  __typename: "ModelPushTokenConnection",
-  items?:  Array<PushToken | null > | null,
-  nextToken?: string | null,
-};
-
 export type PushToken = {
   __typename: "PushToken",
   id: string,
-  userID: string,
   type: string,
   token: string,
   createdAt: string,
   updatedAt: string,
+  owner?: string | null,
 };
 
-export type UpdateUserInput = {
+export type UpdatePushTokenInput = {
   id: string,
-  name?: string | null,
-  username?: string | null,
+  type?: string | null,
+  token?: string | null,
 };
 
-export type DeleteUserInput = {
+export type DeletePushTokenInput = {
   id: string,
 };
 
-export type CreatePushTokenInput = {
-  id?: string | null,
-  userID: string,
-  type: string,
-  token: string,
-};
-
-export type ModelPushTokenConditionInput = {
-  userID?: ModelIDInput | null,
+export type ModelPushTokenFilterInput = {
+  id?: ModelIDInput | null,
   type?: ModelStringInput | null,
   token?: ModelStringInput | null,
-  and?: Array< ModelPushTokenConditionInput | null > | null,
-  or?: Array< ModelPushTokenConditionInput | null > | null,
-  not?: ModelPushTokenConditionInput | null,
+  and?: Array< ModelPushTokenFilterInput | null > | null,
+  or?: Array< ModelPushTokenFilterInput | null > | null,
+  not?: ModelPushTokenFilterInput | null,
 };
 
 export type ModelIDInput = {
@@ -124,127 +101,10 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
-export type UpdatePushTokenInput = {
-  id: string,
-  userID?: string | null,
-  type?: string | null,
-  token?: string | null,
-};
-
-export type DeletePushTokenInput = {
-  id: string,
-};
-
-export type ModelUserFilterInput = {
-  id?: ModelIDInput | null,
-  name?: ModelStringInput | null,
-  username?: ModelStringInput | null,
-  and?: Array< ModelUserFilterInput | null > | null,
-  or?: Array< ModelUserFilterInput | null > | null,
-  not?: ModelUserFilterInput | null,
-};
-
-export type ModelUserConnection = {
-  __typename: "ModelUserConnection",
-  items?:  Array<User | null > | null,
+export type ModelPushTokenConnection = {
+  __typename: "ModelPushTokenConnection",
+  items?:  Array<PushToken | null > | null,
   nextToken?: string | null,
-};
-
-export type ModelPushTokenFilterInput = {
-  id?: ModelIDInput | null,
-  userID?: ModelIDInput | null,
-  type?: ModelStringInput | null,
-  token?: ModelStringInput | null,
-  and?: Array< ModelPushTokenFilterInput | null > | null,
-  or?: Array< ModelPushTokenFilterInput | null > | null,
-  not?: ModelPushTokenFilterInput | null,
-};
-
-export type CreateUserMutationVariables = {
-  input: CreateUserInput,
-  condition?: ModelUserConditionInput | null,
-};
-
-export type CreateUserMutation = {
-  createUser?:  {
-    __typename: "User",
-    id: string,
-    name: string,
-    username: string,
-    pushTokens?:  {
-      __typename: "ModelPushTokenConnection",
-      items?:  Array< {
-        __typename: "PushToken",
-        id: string,
-        userID: string,
-        type: string,
-        token: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type UpdateUserMutationVariables = {
-  input: UpdateUserInput,
-  condition?: ModelUserConditionInput | null,
-};
-
-export type UpdateUserMutation = {
-  updateUser?:  {
-    __typename: "User",
-    id: string,
-    name: string,
-    username: string,
-    pushTokens?:  {
-      __typename: "ModelPushTokenConnection",
-      items?:  Array< {
-        __typename: "PushToken",
-        id: string,
-        userID: string,
-        type: string,
-        token: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type DeleteUserMutationVariables = {
-  input: DeleteUserInput,
-  condition?: ModelUserConditionInput | null,
-};
-
-export type DeleteUserMutation = {
-  deleteUser?:  {
-    __typename: "User",
-    id: string,
-    name: string,
-    username: string,
-    pushTokens?:  {
-      __typename: "ModelPushTokenConnection",
-      items?:  Array< {
-        __typename: "PushToken",
-        id: string,
-        userID: string,
-        type: string,
-        token: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
 };
 
 export type CreatePushTokenMutationVariables = {
@@ -256,11 +116,11 @@ export type CreatePushTokenMutation = {
   createPushToken?:  {
     __typename: "PushToken",
     id: string,
-    userID: string,
     type: string,
     token: string,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -273,11 +133,11 @@ export type UpdatePushTokenMutation = {
   updatePushToken?:  {
     __typename: "PushToken",
     id: string,
-    userID: string,
     type: string,
     token: string,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -290,64 +150,11 @@ export type DeletePushTokenMutation = {
   deletePushToken?:  {
     __typename: "PushToken",
     id: string,
-    userID: string,
     type: string,
     token: string,
     createdAt: string,
     updatedAt: string,
-  } | null,
-};
-
-export type GetUserQueryVariables = {
-  id: string,
-};
-
-export type GetUserQuery = {
-  getUser?:  {
-    __typename: "User",
-    id: string,
-    name: string,
-    username: string,
-    pushTokens?:  {
-      __typename: "ModelPushTokenConnection",
-      items?:  Array< {
-        __typename: "PushToken",
-        id: string,
-        userID: string,
-        type: string,
-        token: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type ListUsersQueryVariables = {
-  filter?: ModelUserFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type ListUsersQuery = {
-  listUsers?:  {
-    __typename: "ModelUserConnection",
-    items?:  Array< {
-      __typename: "User",
-      id: string,
-      name: string,
-      username: string,
-      pushTokens?:  {
-        __typename: "ModelPushTokenConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
-    nextToken?: string | null,
+    owner?: string | null,
   } | null,
 };
 
@@ -359,11 +166,11 @@ export type GetPushTokenQuery = {
   getPushToken?:  {
     __typename: "PushToken",
     id: string,
-    userID: string,
     type: string,
     token: string,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -379,120 +186,60 @@ export type ListPushTokensQuery = {
     items?:  Array< {
       __typename: "PushToken",
       id: string,
-      userID: string,
       type: string,
       token: string,
       createdAt: string,
       updatedAt: string,
+      owner?: string | null,
     } | null > | null,
     nextToken?: string | null,
   } | null,
 };
 
-export type OnCreateUserSubscription = {
-  onCreateUser?:  {
-    __typename: "User",
-    id: string,
-    name: string,
-    username: string,
-    pushTokens?:  {
-      __typename: "ModelPushTokenConnection",
-      items?:  Array< {
-        __typename: "PushToken",
-        id: string,
-        userID: string,
-        type: string,
-        token: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnUpdateUserSubscription = {
-  onUpdateUser?:  {
-    __typename: "User",
-    id: string,
-    name: string,
-    username: string,
-    pushTokens?:  {
-      __typename: "ModelPushTokenConnection",
-      items?:  Array< {
-        __typename: "PushToken",
-        id: string,
-        userID: string,
-        type: string,
-        token: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnDeleteUserSubscription = {
-  onDeleteUser?:  {
-    __typename: "User",
-    id: string,
-    name: string,
-    username: string,
-    pushTokens?:  {
-      __typename: "ModelPushTokenConnection",
-      items?:  Array< {
-        __typename: "PushToken",
-        id: string,
-        userID: string,
-        type: string,
-        token: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
-      nextToken?: string | null,
-    } | null,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
+export type OnCreatePushTokenSubscriptionVariables = {
+  owner: string,
 };
 
 export type OnCreatePushTokenSubscription = {
   onCreatePushToken?:  {
     __typename: "PushToken",
     id: string,
-    userID: string,
     type: string,
     token: string,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
+};
+
+export type OnUpdatePushTokenSubscriptionVariables = {
+  owner: string,
 };
 
 export type OnUpdatePushTokenSubscription = {
   onUpdatePushToken?:  {
     __typename: "PushToken",
     id: string,
-    userID: string,
     type: string,
     token: string,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
+};
+
+export type OnDeletePushTokenSubscriptionVariables = {
+  owner: string,
 };
 
 export type OnDeletePushTokenSubscription = {
   onDeletePushToken?:  {
     __typename: "PushToken",
     id: string,
-    userID: string,
     type: string,
     token: string,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };

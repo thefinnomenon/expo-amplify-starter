@@ -69,5 +69,8 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 0,
     'import/no-extraneous-dependencies': 0,
     'import/extensions': 0,
+    'lines-between-class-members': 0,
+    '@typescript-eslint/no-empty-function': 0,
+    'class-methods-use-this': 0,
   },
 };

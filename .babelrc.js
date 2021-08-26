@@ -11,7 +11,7 @@ module.exports = api => {
             '@/api': './src/api',
             '@/assets': './src/assets',
             '@/components': './src/components',
-            '@/locales': './locales/',
+            '@/locales': './locales',
             '@/navigation': './src/navigation',
             '@/screens': './src/screens',
             '@/styles': './src/styles',
