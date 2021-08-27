@@ -20,6 +20,12 @@
       },
       "auth": {
         "expoamplifystartera3a88044": {}
+      },
+      "function": {
+        "expoAmplifyStarterPushNotificationServer": {
+          "deploymentBucketName": "amplify-expoamplifystarter-dev-132314-deployment",
+          "s3Key": "amplify-builds/expoAmplifyStarterPushNotificationServer-4d6e412f4f5741703448-build.zip"
+        }
       }
     }
   }

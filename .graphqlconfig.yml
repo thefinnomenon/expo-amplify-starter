@@ -2,14 +2,14 @@ projects:
   expoamplifystarter:
     schemaPath: src/graphql/schema.json
     includes:
-      - src/graphql/**/*.ts
+      - src/api/
     excludes:
       - ./amplify/**
     extensions:
       amplify:
         codeGenTarget: typescript
         generatedFileName: src/api/amplify.ts
-        docsFilePath: src/graphql
+        docsFilePath: src/api
 extensions:
   amplify:
     version: 3

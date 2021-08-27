@@ -6,7 +6,7 @@ import { Subscription } from '@unimodules/core';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import API, { GraphQLResult, graphqlOperation } from '@aws-amplify/api';
 import { PUSHTOKEN_KEY } from '@/utilities/localStorage';
-import { createPushToken, updatePushToken } from '../graphql/mutations';
+import { createPushToken, updatePushToken } from './mutations';
 import { Alert } from '@/utilities/alerts';
 import { CreatePushTokenMutation, UpdatePushTokenMutation } from '@/utilities/amplify';
 
@@ -93,8 +93,8 @@ export default class NotificationManager {
     const type = Platform.OS;
     try {
       // Retrieve and parse token (if exists)
-      const jsonStoredToken = await AsyncStorage.getItem(PUSHTOKEN_KEY);
-      const storedToken = jsonStoredToken != null ? JSON.parse(jsonStoredToken) : null;
+      const storedToken = await AsyncStorage.getItem(PUSHTOKEN_KEY);
+      // const storedToken = jsonStoredToken != null ? JSON.parse(jsonStoredToken) : null;
 
       // First time saving token -> create record
       if (!storedToken) {
@@ -106,26 +106,27 @@ export default class NotificationManager {
 
         // Store token in local storage
         if (data) {
-          await AsyncStorage.setItem(PUSHTOKEN_KEY, JSON.stringify({ id: data.id, token }));
+          await AsyncStorage.setItem(PUSHTOKEN_KEY, token);
         }
         return;
       }
 
       // Stored token doesn't match current token -> update record
-      if (storedToken.token !== token) {
+      if (storedToken !== token) {
         // Update record
         const res = (await API.graphql(
-          graphqlOperation(updatePushToken, { input: { id: storedToken.id, type, token } }),
+          graphqlOperation(updatePushToken, { input: { token, type } }),
         )) as GraphQLResult<UpdatePushTokenMutation>;
         const data = res.data?.updatePushToken;
 
         // Update token in local storage
         if (data) {
-          await AsyncStorage.setItem(PUSHTOKEN_KEY, JSON.stringify({ id: data.id, token }));
+          await AsyncStorage.setItem(PUSHTOKEN_KEY, token);
         }
       }
     } catch (error) {
-      throw Error('Failed to update push token');
+      console.log(error);
+      Alert('Notification Error', 'Failed to update push token');
     }
   }
 

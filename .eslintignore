@@ -10,3 +10,4 @@ coverage/
 
 # Amplify
 amplify/backend/auth/userPoolGroups/
+src/models

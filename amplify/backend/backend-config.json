@@ -18,7 +18,11 @@
               "userPoolId": "authexpoamplifystartera3a88044"
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
         }
       }
     }
@@ -41,6 +45,23 @@
             "UserPoolId",
             "AppClientIDWeb",
             "AppClientID"
+          ]
+        }
+      ]
+    }
+  },
+  "function": {
+    "expoAmplifyStarterPushNotificationServer": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "api",
+          "resourceName": "expoamplifystarter",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
           ]
         }
       ]

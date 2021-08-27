@@ -3,11 +3,13 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreatePushToken = /* GraphQL */ `
-  subscription OnCreatePushToken($owner: String!) {
+  subscription OnCreatePushToken($owner: String) {
     onCreatePushToken(owner: $owner) {
-      id
-      type
       token
+      type
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
       owner
@@ -15,11 +17,13 @@ export const onCreatePushToken = /* GraphQL */ `
   }
 `;
 export const onUpdatePushToken = /* GraphQL */ `
-  subscription OnUpdatePushToken($owner: String!) {
+  subscription OnUpdatePushToken($owner: String) {
     onUpdatePushToken(owner: $owner) {
-      id
-      type
       token
+      type
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
       owner
@@ -27,11 +31,13 @@ export const onUpdatePushToken = /* GraphQL */ `
   }
 `;
 export const onDeletePushToken = /* GraphQL */ `
-  subscription OnDeletePushToken($owner: String!) {
+  subscription OnDeletePushToken($owner: String) {
     onDeletePushToken(owner: $owner) {
-      id
-      type
       token
+      type
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
       owner

@@ -8,9 +8,11 @@ export const createPushToken = /* GraphQL */ `
     $condition: ModelPushTokenConditionInput
   ) {
     createPushToken(input: $input, condition: $condition) {
-      id
-      type
       token
+      type
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
       owner
@@ -23,9 +25,11 @@ export const updatePushToken = /* GraphQL */ `
     $condition: ModelPushTokenConditionInput
   ) {
     updatePushToken(input: $input, condition: $condition) {
-      id
-      type
       token
+      type
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
       owner
@@ -38,9 +42,11 @@ export const deletePushToken = /* GraphQL */ `
     $condition: ModelPushTokenConditionInput
   ) {
     deletePushToken(input: $input, condition: $condition) {
-      id
-      type
       token
+      type
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
       owner
